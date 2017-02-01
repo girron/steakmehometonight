@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Carnivore-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="InitialController" title="Carnivore" spacing="10" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Carnivore_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="QDU-fF-olw">
+                            <items>
+                                <timer alignment="center" textAlignment="center" id="FD7-in-76v">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <calendarUnit key="units" minute="YES" second="YES"/>
+                                </timer>
+                                <button width="1" alignment="left" title="Start Timer" id="29l-TH-1Ep">
+                                    <connections>
+                                        <action selector="onTimerButton" destination="AgC-eL-Hgc" id="bZh-JT-mvl"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="center" text="Weight (oz)" id="d28-Mu-ZGj"/>
+                        <picker height="55" alignment="left" focusStyle="stack" id="hkY-5N-vrR">
+                            <connections>
+                                <action selector="onWeightChanged:" destination="AgC-eL-Hgc" id="opU-XO-ygu"/>
+                            </connections>
+                        </picker>
+                        <label alignment="center" text="Label" id="dXr-Wq-QrW"/>
+                        <picker height="100" alignment="left" style="sequence" id="IOT-XX-Chs">
+                            <connections>
+                                <action selector="onTemperatureChanged:" destination="AgC-eL-Hgc" id="EbY-im-cgL"/>
+                            </connections>
+                        </picker>
+                    </items>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="dXr-Wq-QrW" id="NG0-hD-gcU"/>
+                        <outlet property="temperaturePicker" destination="IOT-XX-Chs" id="t3e-FS-gpJ"/>
+                        <outlet property="timer" destination="FD7-in-76v" id="OE9-uz-mfD"/>
+                        <outlet property="timerButton" destination="29l-TH-1Ep" id="MU8-1Z-0Dk"/>
+                        <outlet property="weightPicker" destination="hkY-5N-vrR" id="wzf-qx-bYL"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
